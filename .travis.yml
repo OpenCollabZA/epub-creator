@@ -2,3 +2,19 @@ language: java
 jdk:
   - oraclejdk8
   - oraclejdk7
+  
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "kuMEP/lj5qM4NpEjR+jxLcJIyc7XGWI74FU2gwzMaM0/9HzX8LI2qk1NfqIc5jf1K6jPrLa4bBfMENluaVMizWisM5ShxrRJB9djm0G4rXeyBsmdSsrkmbjxxjqStPwunykVn8Npo5lZsetfRYCdjzSwiY9F/wKLjrwn+nq9YvZV3B3dOVS5ZCAPn0ZugqUAvYtSLX87N3q2SOowHRc8mkQ1MqTsRFC07H2rdo6qAcCROsVLhmMKRFSk/jPwFYPMFKYuDlwMEj/reqqJ0KpPoJ3qu9FPmHDwhyWwVl/T+eZEf6bJ0Q5BjWeXLgzgqaytrQX9p8x2dAYYBInTvH1zpeAoOB8vMAdKm7kcuLE5ovVmuq95akQ0Qe41mcx2f6JQ2kMRfcxpWLQhcfvoWNSCszmAfVd9fhQUCwqOgE68nJmSZcp5xR1VcG5KV7pKj9coTGOin1vH/lNdAe1OcK9RlwkC4TbEdtaAf5UVsb0tMBn6o9MIs29dViPDPQ14YoXJb89UpkypYzDqLst/557CmOf7Uw8QjgPkQziKS2/gZpihhoZPzT0N5hShteHQGBN+rhBxLDFfT+NxVm6izzKumIp8jPGiYoosr+pDwN3K7smgG+V1T8iy8EVUBXpjT/3AQTxgDI4ZwHr9+0dQm0shgdRJO/GITMx/v6076e657i8="
+
+addons:
+  coverity_scan:
+    project:
+      name: "OpenCollabZA/epub-creator"
+      description: "Build submitted via Travis CI"
+    notification_email: samuel@opencollab.co.za
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: coverity_scan  
