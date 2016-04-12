@@ -26,7 +26,7 @@ mvn clean install
 
 # Code example
 
-```
+```java
 try (FileOutputStream file = new FileOutputStream(new File("test.epub"))) {
 
             EpubBook book = new EpubBook("en", "Samuel .-__Id1", "Test Book", "Samuel Holtzkampf");
