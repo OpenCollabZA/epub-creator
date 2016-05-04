@@ -85,7 +85,7 @@ public class MediaTypeUtil {
      * @return the mime type
      */
     public static String getMediaTypeFromFilename(String fileName) {
-        String ext = fileName.substring(fileName.lastIndexOf(".") + 1);
+        String ext = fileName.substring(fileName.lastIndexOf('.') + 1);
         return getMediaTypeFromExt(ext);
     }
 
