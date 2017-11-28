@@ -124,7 +124,11 @@ public class EpubWriter {
      * @throws IOException
      */
     private void addStringToZip(ZipOutputStream resultStream, String fileName, String content) throws IOException {
-        resultStream.putNextEntry(new ZipEntry(fileName));
+        ZipEntry entry = new ZipEntry(fileName);
+        entry.setMethod(ZipEntry.STORED);
+        entry.setSize(content.getBytes("UTF-8").length);
+        entry.setCrc(calculateCrc(content.getBytes("UTF-8")));
+        resultStream.putNextEntry(entry);
         Writer out = new OutputStreamWriter(resultStream, "UTF-8");
         out.write(content);
         out.flush();
@@ -139,7 +143,11 @@ public class EpubWriter {
      */
     private void addContent(ZipOutputStream resultStream, List<Content> contents) throws IOException {
         for (Content content : contents) {
-            resultStream.putNextEntry(new ZipEntry(contentFolder + "/" + content.getHref()));
+            ZipEntry entry = new ZipEntry(contentFolder + "/" + content.getHref());
+            entry.setMethod(ZipEntry.STORED);
+            entry.setSize(content.getContent().length);
+            entry.setCrc(calculateCrc(content.getContent()));
+            resultStream.putNextEntry(entry);
             resultStream.write(content.getContent());
         }
     }
