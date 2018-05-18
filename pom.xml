@@ -56,17 +56,17 @@
     
     <distributionManagement>
         <repository>
-            <id>oc-nexus-releases</id>
+            <id>opencollab-maven-releases</id>
             <name>OpenCollab Nexus Release Repo</name>
             <url>
-                http://nexus.opencollab.co.za/nexus/content/repositories/releases
+                https://nexus3.opencollab.co.za/repository/opencollab-maven-releases/
             </url>
         </repository>
         <snapshotRepository>
-            <id>oc-nexus-snapshot</id>
+            <id>opencollab-maven-snapshots</id>
             <name>OpenCollab Nexus Snapshot Repo</name>
             <url>
-                http://nexus.opencollab.co.za/nexus/content/repositories/snapshots
+                https://nexus3.opencollab.co.za/repository/opencollab-maven-snapshots/
             </url>
         </snapshotRepository>
     </distributionManagement>
