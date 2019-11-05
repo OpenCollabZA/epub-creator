@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>coza.opencollab.epub</groupId>
     <artifactId>epub-creator</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     
     <scm>
         <connection>scm:git:francois-opencollab@github.com:OpenCollabZA/epub-creator.git</connection>
         <url>scm:git:francois-opencollab@github.com:OpenCollabZA/epub-creator.git</url>
         <developerConnection>scm:git:francois-opencollab@github.com:OpenCollabZA/epub-creator.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>epub-creator-1.0.1</tag>
   </scm>
     
     <properties>
