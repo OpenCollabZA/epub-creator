@@ -7,9 +7,9 @@
     <packaging>jar</packaging>
     
     <scm>
-        <connection>scm:git:git@github.com:OpenCollabZA/epub-creator.git</connection>
-        <url>scm:git:git@github.com:OpenCollabZA/epub-creator.git</url>
-        <developerConnection>scm:git:git@github.com:OpenCollabZA/epub-creator.git</developerConnection>
+        <connection>scm:git:francois-opencollab@github.com:OpenCollabZA/epub-creator.git</connection>
+        <url>scm:git:francois-opencollab@github.com:OpenCollabZA/epub-creator.git</url>
+        <developerConnection>scm:git:francois-opencollab@github.com:OpenCollabZA/epub-creator.git</developerConnection>
       <tag>HEAD</tag>
   </scm>
     
@@ -66,5 +66,32 @@
             <url>https://nexus3.opencollab.co.za/repository/opencollab-maven-public-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
-    
+    <profiles>
+   <profile>
+      <id>releases</id>
+      <build>
+         <plugins>
+            <plugin>
+               <groupId>org.sonatype.plugins</groupId>
+               <artifactId>nexus-staging-maven-plugin</artifactId>
+               <version>1.5.1</version>
+               <executions>
+                  <execution>
+                     <id>default-deploy</id>
+                     <phase>deploy</phase>
+                     <goals>
+                        <goal>deploy</goal>
+                     </goals>
+                  </execution>
+               </executions>
+               <configuration>
+                  <serverId>nexus-releases</serverId>
+                  <nexusUrl>https://nexus3.opencollab.co.za/repository/opencollab-maven-public-releases</nexusUrl>
+                  <skipStaging>true</skipStaging>
+               </configuration>
+            </plugin>
+         </plugins>
+      </build>
+   </profile>
+</profiles>
 </project>
