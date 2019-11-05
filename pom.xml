@@ -10,7 +10,7 @@
         <connection>scm:git:git@github.com:OpenCollabZA/epub-creator.git</connection>
         <url>scm:git:git@github.com:OpenCollabZA/epub-creator.git</url>
         <developerConnection>scm:git:git@github.com:OpenCollabZA/epub-creator.git</developerConnection>
-      <tag>epub-creator-1.0.1</tag>
+      <tag>HEAD</tag>
   </scm>
     
     <properties>
